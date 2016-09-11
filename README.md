@@ -24,3 +24,5 @@ Perl is available on pretty much every Unix-based system; PHP and JavaScript are
 - [ ] A natural way of checking types. At the moment it's a bit strange with ref returning an empty string if it's a scalar, and overall not acting in a coherent way.
 
 - [ ] A Perl runtime written in Perl that sets up global scope, as well as includes extension modules before evaluating the file passed to run. 
+
+- [ ] A JS Closure wrapper that does prototypical blessing
