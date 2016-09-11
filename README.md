@@ -1,5 +1,5 @@
 # nodepl
-implementing NodeJS practices in Perl 5.6.
+implementing NodeJS practices in Perl 5 version 22
 
 core: working core modules
 snippets: not sure how to describe
