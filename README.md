@@ -15,7 +15,8 @@ implementing NodeJS practices in Perl 5 version 22
 
 ## Why Perl?
 
-Perl is available on pretty much every Unix-based system; PHP and JavaScript are not.
+1. Perl is available on pretty much every Unix-based system; PHP and JavaScript are not.
+2. Perl module installation defaults to global, which is a pain for wrangling on systems where you do not have root access.
 
 ## Milestones in mind
 
