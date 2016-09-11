@@ -1,3 +1,5 @@
+[[https://raw.githubusercontent.com/dmitrymakhnin/nodepl/master/fancy-image.png]]
+
 # nodepl
 implementing NodeJS practices in Perl 5 version 22
 
