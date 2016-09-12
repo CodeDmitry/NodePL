@@ -1,4 +1,7 @@
 (sub {
+    use strict;
+    use warnings;
+
     my $fs = {
         ##
         # readFileSync :: string -> string
