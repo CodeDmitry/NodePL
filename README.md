@@ -25,7 +25,6 @@ simulating NodeJS runtime environment/practices in Perl 5 version 22
 - [ ] A Perl runtime written in Perl that sets up global scope, as well as includes extension modules before evaluating the file passed to run. 
 > perl ./nodepl <file> <options>
 
-
 - [ ] A reminder list of installed modules at runtime. It is not obvious how to check which
 Perl modules are available, and I want to make the runtime report a list of pm requireable modules
 as a list of strings bound somewhere within $global object.
@@ -36,4 +35,4 @@ as a list of strings bound somewhere within $global object.
 
 - [ ] Event Loop, Event Queue.
 
-- [ ] ???
+- [ ] Timeouts.
