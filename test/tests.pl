@@ -24,4 +24,20 @@ perl::spawn (sub {
     console::log 'hello!';
 });
 
+my @stuff = (
+    'a string',
+    1337,
+    [1, 2, 3],
+    {foo => 'bar'},
+    sub { return "hi!"; }
+);
+
+foreach my $thing(@stuff) { 
+    my $raw = stringify($thing);
+    chomp $raw;
+    my $info = typeof $thing;
+
+
+    console::log ("begin\n" . $raw . "\n--is a--\n" . $info . "\nend\n");
+}
 

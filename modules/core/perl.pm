@@ -1,10 +1,18 @@
 package perl;
 use strict;
 use warnings;
+require Exporter;
 use Data::Dumper;
 $Data::Dumper::Deparse = 1;
 $Data::Dumper::Purity = 1;
 $Data::Dumper::Indent = 1;
+
+
+our @ISA = ('Exporter');
+our @EXPORT = (
+    'typeof',
+    'stringify'
+);
 
 # | comment
 =head
