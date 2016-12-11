@@ -1,7 +1,6 @@
 package perl;
 use strict;
 use warnings;
-use Set;
 use Data::Dumper;
 $Data::Dumper::Deparse = 1;
 $Data::Dumper::Purity = 1;
@@ -100,4 +99,16 @@ sub discriminate {
     }
 }
 
+sub spawn {
+    my $callback = shift;
+    my $pid = fork();
+
+    if ($pid) {
+        return $pid;
+    } 
+
+    $callback->();
+
+    exit;    
+}
 

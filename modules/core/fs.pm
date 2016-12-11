@@ -1,4 +1,5 @@
 package fs;
+use perl;
 
 # | comment
 =head
@@ -33,18 +34,17 @@ sub get_contents {
     return $text;
 }
 
+
 # | comment
 =head
 php file_get_contents
 =cut
 # | end
 sub get_contents_async {
-    local $/ = undef;
-    open my $file, '<', $_[0]
-        or die "$!\n";
-    my $text = <$file>;
-    close $file;
-    $_[1]->($text);
+    my $fileName = $_[0];
+    my $callback = $_[1];
+    my $data = fs::get_contents($fileName);
+    $callback->($data);
 }
 
 
