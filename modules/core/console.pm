@@ -1,8 +1,12 @@
 package console;
-use strict;
-use warnings;
+use Data::Dumper;
+$Data::Dumper::Deparse = 1;
 
-sub console::log {
-    print $_[0] . "\n";
+sub log {
+    if ("$_[0]" eq __PACKAGE__) {
+        shift @_; 
+    }   
+    print shift . "\n";
 }
 1;
+
