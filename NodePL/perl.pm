@@ -7,7 +7,6 @@ $Data::Dumper::Deparse = 1;
 $Data::Dumper::Purity = 1;
 $Data::Dumper::Indent = 1;
 
-
 our @ISA = ('Exporter');
 our @EXPORT = (
     'typeof',
@@ -21,6 +20,11 @@ eval friendly.
 =cut
 # | end comment
 sub stringify {
+    # | make perl::stringify the same as perl->stringify
+    # | by shifting package if arrow is used.
+    shift @_
+        if "$_[0]" eq __PACKAGE__;
+
     return Dumper $_[0];
 }
 
@@ -30,6 +34,11 @@ qualified eval.
 =cut
 # | end comment
 sub eval {
+    # | make perl::eval the same as perl->eval
+    # | by shifting package if arrow is used.
+    shift @_
+        if "$_[0]" eq __PACKAGE__;
+
     return eval $_[0];
 }
 
@@ -39,6 +48,11 @@ loads into reference.
 =cut
 # | end comment
 sub require {
+    # | make perl::require the same as perl->require
+    # | by shifting package if arrow is used.
+    shift @_
+        if "$_[0]" eq __PACKAGE__;
+
     local $/ = undef;
     my $path = $_[0];
     my $file;
@@ -59,6 +73,11 @@ loads into global package scope.
 =cut
 # | end comment
 sub require_global {
+    # | make perl::require_global the same as perl->require_global
+    # | by shifting package if arrow is used.
+    shift @_
+        if "$_[0]" eq __PACKAGE__;
+
     my $n = $_[0];
     my $p = $_[1];
     
@@ -69,6 +88,11 @@ sub require_global {
 }
 
 sub typeof {
+    # | make perl::typeof the same as perl->typeof
+    # | by shifting package if arrow is used.
+    shift @_
+        if "$_[0]" eq __PACKAGE__;
+
     my $obj = $_[0];
     my $ref = ref $obj;
 
@@ -91,6 +115,11 @@ sub typeof {
 
 # | descriminating typeof
 sub discriminate {
+    # | make perl::discriminate the same as perl->discriminate
+    # | by shifting package if arrow is used.
+    shift @_
+        if "$_[0]" eq __PACKAGE__;
+
     my $obj = $_[0];
     my $basis = perl::typeof $obj;
 
@@ -108,6 +137,11 @@ sub discriminate {
 }
 
 sub spawn {
+    # | make perl::spawn the same as perl->spawn
+    # | by shifting package if arrow is used.
+    shift @_
+        if "$_[0]" eq __PACKAGE__;
+
     my $callback = shift;
     my $pid = fork();
 
