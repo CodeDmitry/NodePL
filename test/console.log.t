@@ -10,7 +10,6 @@ use NodePL::console;
 my @tests = ();
 
 (sub {
-
     push @tests, sub {
         my $toWrite = "this is a test";
         my $str = '';
