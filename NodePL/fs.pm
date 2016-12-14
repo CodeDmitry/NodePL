@@ -1,5 +1,5 @@
 package fs;
-use perl;
+use NodePL::perl;
 
 # | comment
 =head
