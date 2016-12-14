@@ -22,8 +22,8 @@ eval friendly.
 sub stringify {
     # | make perl::stringify the same as perl->stringify
     # | by shifting package if arrow is used.
-    shift @_
-        if "$_[0]" eq __PACKAGE__;
+    shift @_ 
+        if (defined $_[0] and $_[0] eq __PACKAGE__);
 
     return Dumper $_[0];
 }
@@ -36,8 +36,8 @@ qualified eval.
 sub eval {
     # | make perl::eval the same as perl->eval
     # | by shifting package if arrow is used.
-    shift @_
-        if "$_[0]" eq __PACKAGE__;
+    shift @_ 
+        if (defined $_[0] and $_[0] eq __PACKAGE__);
 
     return eval $_[0];
 }
@@ -50,8 +50,8 @@ loads into reference.
 sub require {
     # | make perl::require the same as perl->require
     # | by shifting package if arrow is used.
-    shift @_
-        if "$_[0]" eq __PACKAGE__;
+    shift @_ 
+        if (defined $_[0] and $_[0] eq __PACKAGE__);
 
     local $/ = undef;
     my $path = $_[0];
@@ -75,8 +75,8 @@ loads into global package scope.
 sub require_global {
     # | make perl::require_global the same as perl->require_global
     # | by shifting package if arrow is used.
-    shift @_
-        if "$_[0]" eq __PACKAGE__;
+    shift @_ 
+        if (defined $_[0] and $_[0] eq __PACKAGE__);
 
     my $n = $_[0];
     my $p = $_[1];
@@ -90,8 +90,8 @@ sub require_global {
 sub typeof {
     # | make perl::typeof the same as perl->typeof
     # | by shifting package if arrow is used.
-    shift @_
-        if "$_[0]" eq __PACKAGE__;
+    shift @_ 
+        if (defined $_[0] and $_[0] eq __PACKAGE__);
 
     my $obj = $_[0];
     my $ref = ref $obj;
@@ -117,8 +117,8 @@ sub typeof {
 sub discriminate {
     # | make perl::discriminate the same as perl->discriminate
     # | by shifting package if arrow is used.
-    shift @_
-        if "$_[0]" eq __PACKAGE__;
+    shift @_ 
+        if (defined $_[0] and $_[0] eq __PACKAGE__);
 
     my $obj = $_[0];
     my $basis = perl::typeof $obj;
@@ -139,8 +139,8 @@ sub discriminate {
 sub spawn {
     # | make perl::spawn the same as perl->spawn
     # | by shifting package if arrow is used.
-    shift @_
-        if "$_[0]" eq __PACKAGE__;
+    shift @_ 
+        if (defined $_[0] and $_[0] eq __PACKAGE__);
 
     my $callback = shift;
     my $pid = fork();
@@ -154,3 +154,18 @@ sub spawn {
     exit;    
 }
 
+sub perl::arity {    
+    shift @_ 
+        if (defined $_[0] and $_[0] eq __PACKAGE__);
+ 
+    if (ref $_[0] eq 'ARRAY') {
+        my $length = scalar @{$_[0]};
+        
+        return $length + 1;
+    }
+    
+    return 0
+        if (not defined $_[0]);
+        
+    die "arity> not an array/undef.\n";
+}

@@ -4,8 +4,8 @@ use List::Util ('reduce');
 sub log {
     # | make console::log the same as console->log
     # | by shifting package if arrow is used.
-    shift @_
-        if "$_[0]" eq __PACKAGE__;
+    shift @_ 
+        if (defined $_[0] and $_[0] eq __PACKAGE__);
         
     # | console.log is varaidic; so it always appends
     # | the arguments before printing them.
