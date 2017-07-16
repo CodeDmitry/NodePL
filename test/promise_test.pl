@@ -29,7 +29,6 @@ my @tests = (
     sub {
         eval {
             promise->new(sub {
-                #$_[0]->(1);
                 $_[1]->("failed");
             })->then(sub {
                 console::log $_[0];
