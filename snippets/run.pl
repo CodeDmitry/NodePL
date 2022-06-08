@@ -27,8 +27,7 @@
             'HASH' => 'map',
         );
         my $mapDefault = 'string';
-        
-        
+                
         if ($ref) {
             if (exists($map{$ref})) {
                 return($map{$ref});
