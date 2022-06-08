@@ -18,7 +18,6 @@ sub with {
 
     close $file;
 }
-1;
 
 # | comment
 =head
@@ -45,5 +44,5 @@ sub get_contents_async {
     my $data = fs::get_contents($fileName);
     $callback->($data);
 }
-
+1;
 
