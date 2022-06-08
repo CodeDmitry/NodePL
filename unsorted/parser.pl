@@ -4,7 +4,6 @@ use Data::Dumper;
 $data = fs::readFileSync('test.xpl');
 print $data;
 
-
 package fs;
 sub readFileSync {
     my $filename = $_[0];
