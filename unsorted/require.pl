@@ -8,8 +8,7 @@ package main;
         it is needed. This module will take advantage of being the 
         first module being loaded, so it will store the value in
         $__dirname and $__filename.
-             
-           
+                        
 =cut
 use File::Basename;
 use Cwd;
