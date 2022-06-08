@@ -34,7 +34,6 @@ sub get_contents {
     return $text;
 }
 
-
 # | comment
 =head
 php file_get_contents
