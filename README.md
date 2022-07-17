@@ -17,13 +17,15 @@ simulating NodeJS runtime environment/practices in Perl 5 version 22
 Perl is 
 
 <ol>
-<li><a href="#available">available</a></li>
-<li><a href="#fast">fast</a></li>
-<li><a href="#flexible">flexible.</a></li>
+  <li>available, Perl is available everywhere, and if it isn't there are ways to get it, eg [perlito](https://github.com/CodeDmitry/perlito5-cached-jar) which allows you to run it from Java.</li>
+  <li>fast(Not sure what the current benchmarks are, and i'm pretty sure it will foreve, but at the time I made the project, it was faster than JavaScript)</li>
+  <li>powerful - makes easy things easy and hard things possible.</li>
+  <li>flexible(There is more than one way to do practically everything).</li>
   <li>free.</li>
-  <li>underhyped.</li>
-  <li>well documented.</li>
-  <li>has many existing packages.</li>
+  <li>underappreciated(JSON is all the rage nowadays, Perl had that before it, Lisp could implemented it but didn't quite have it, and the accessability of RegExp as a core feature of the language is unmatched).</li>
+  <li>well documented and its behavior is well understood(even if you personally don't).</li>
+  <li>has many existing packages - granted, Perl package system is ugly and I made this project in hopes of putting some of it into a more dynamic but simpler to understand hash based structure analogous to NodeJS's eval based require system.</li>
+  <li>magical - Perl is full of advanced language features enabling you to extend the language itself in ways no other scripting languages except perhaps Lisp(lisp is special, as you can redefine numbers in that language, if properly implemented) allow.</li>
 </ol>
 
 
