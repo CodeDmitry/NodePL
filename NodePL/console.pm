@@ -11,7 +11,7 @@ sub log {
     # | the arguments before printing them.
     # | console.log(1, 2, 3) prints "1 2 3"
     my $text = reduce {$a . ' ' . $b} @_;
-    print $text . "\n";
+    print("$text\n");
 }
 1;
 
