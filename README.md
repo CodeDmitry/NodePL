@@ -1,7 +1,7 @@
 ![fancy-image](https://raw.githubusercontent.com/dmitrymakhnin/nodepl/master/fancy-image.png)
 
 # nodepl
-simulating NodeJS runtime environment/practices in Perl 5 version 22
+This project attempts to bring some concepts from NodeJS in Perl5
 
 * modules: working core modules
   * core: pm modules
